@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP JS - Estructuras Condicionales</title>
+</head>
+<body>
+    <h1>Trabajo Práctico N°1 - JavaScript</h1>
+    <p>Elegí un ejercicio para ejecutar:</p>
+
+    <button onclick="ejecutarEjercicio(1)">Ejercicio 1</button>
+    <button onclick="ejecutarEjercicio(2)">Ejercicio 2</button>
+    <button onclick="ejecutarEjercicio(3)">Ejercicio 3</button>
+    <button onclick="ejecutarEjercicio(4)">Ejercicio 4</button>
+    <button onclick="ejecutarEjercicio(5)">Ejercicio 5</button>
+    <button onclick="ejecutarEjercicio(6)">Ejercicio 6</button>
+    <button onclick="ejecutarEjercicio(7)">Ejercicio 7</button>
+    <button onclick="ejecutarEjercicio(8)">Ejercicio 8</button>
+    <button onclick="ejecutarEjercicio(9)">Ejercicio 9</button>
+    <button onclick="ejecutarEjercicio(10)">Ejercicio 10</button>
+
+    <script>
+        function ejecutarEjercicio(numero) {
+            const scriptAnterior = document.getElementById("ejercicioActual");
+
+            if (scriptAnterior) {
+                scriptAnterior.remove();
+            }
+
+            const script = document.createElement("script");
+            script.id = "ejercicioActual";
+            script.src = "js/ejercicio" + String(numero).padStart(2, "0") + ".js";
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
